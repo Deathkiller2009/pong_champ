@@ -6,15 +6,15 @@ import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 @Data
-public class Racket {
+public class Paddle {
 
     private double x, y, width, height;
 
     private Color color;
 
-    public Racket(double x, double y, Color color) {
+    public Paddle(double x, double y, Color color) {
         this.x = x;
-        this.y = y + 31;
+        this.y = y + WindowConstants.TOOLBAR_HEIGHT;
         this.width = 10;
         this.height = 100;
         this.color = color;

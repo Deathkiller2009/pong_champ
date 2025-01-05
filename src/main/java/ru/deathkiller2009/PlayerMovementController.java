@@ -9,18 +9,33 @@ import java.awt.event.KeyEvent;
 @AllArgsConstructor
 public class PlayerMovementController {
 
+    public PlayerMovementController(Paddle paddle) {
+        this.paddle = paddle;
+        this.userInputProcessor = null;
+    }
+
     private UserInputProcessor userInputProcessor;
 
-    private Racket racket;
+    private Paddle paddle;
 
     public void update(double dt) {
-        if (userInputProcessor.isKeyPressed(KeyEvent.VK_DOWN)) {
-            if ((racket.getY() + 250 * dt) + 100 < 600 - 8)
-                racket.setY(racket.getY() + dt * 250);
-        } else if (userInputProcessor.isKeyPressed(KeyEvent.VK_UP)) {
-            if (racket.getY() - 250 * dt > 31)
-                racket.setY(racket.getY() - dt * 250);
+        if (userInputProcessor != null) {
+            if (userInputProcessor.isKeyPressed(KeyEvent.VK_DOWN)) {
+                moveDown(dt);
+            } else if (userInputProcessor.isKeyPressed(KeyEvent.VK_UP)) {
+                moveUp(dt);
+            }
         }
+    }
+
+    public void moveUp(double dt) {
+        if (paddle.getY() - PaddleConstants.PADDLE_SPEED * dt > WindowConstants.TOOLBAR_HEIGHT)
+            paddle.setY(paddle.getY() - dt * PaddleConstants.PADDLE_SPEED);
+    }
+
+    public void moveDown(double dt) {
+        if ((paddle.getY() + PaddleConstants.PADDLE_SPEED * dt) + paddle.getHeight() < WindowConstants.HEIGHT - WindowConstants.INSETS_BOTTOM)
+            paddle.setY(paddle.getY() + dt * PaddleConstants.PADDLE_SPEED);
     }
 
 }
