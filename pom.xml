@@ -5,10 +5,14 @@
   <groupId>ru.deathkiller2009</groupId>
   <artifactId>pong_champ</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <name>pong_champ</name>
   <url>http://maven.apache.org</url>
+  <modules>
+    <module>pong-server</module>
+      <module>pong-client</module>
+  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
