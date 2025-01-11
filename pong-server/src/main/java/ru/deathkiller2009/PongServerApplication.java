@@ -1,5 +1,7 @@
 package ru.deathkiller2009;
 
+import ru.deathkiller2009.request.*;
+
 import java.io.IOException;
 
 public class PongServerApplication {
