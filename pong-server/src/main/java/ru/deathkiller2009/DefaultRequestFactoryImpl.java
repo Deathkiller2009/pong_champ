@@ -1,4 +1,4 @@
-package ru.deathkiller2009.request;
+package ru.deathkiller2009;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,6 +12,9 @@ public class DefaultRequestFactoryImpl implements RequestFactory {
         switch (header) {
             case "START_GAME": {
                 return objectMapper.readValue(jsonData, SinglePlayerRequest.class);
+            }
+            case "START_MULTIPLAYER_GAME": {
+                return objectMapper.readValue(jsonData, MultiPlayerRequest.class);
             }
         }
 

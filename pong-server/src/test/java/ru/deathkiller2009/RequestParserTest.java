@@ -3,12 +3,8 @@ package ru.deathkiller2009;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import ru.deathkiller2009.request.Request;
-import ru.deathkiller2009.request.SinglePlayerRequest;
 
 import java.nio.charset.StandardCharsets;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class RequestParserTest {
 

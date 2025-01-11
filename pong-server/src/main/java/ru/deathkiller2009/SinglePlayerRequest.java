@@ -1,8 +1,4 @@
-package ru.deathkiller2009.request;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+package ru.deathkiller2009;
 
 public class SinglePlayerRequest extends Request{
 

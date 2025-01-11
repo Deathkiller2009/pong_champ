@@ -1,8 +1,9 @@
 package ru.deathkiller2009;
 
 import lombok.RequiredArgsConstructor;
-import ru.deathkiller2009.request.Request;
 
+import java.io.DataInputStream;
+import java.net.Socket;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,10 +12,10 @@ public class Dispatcher {
 
     List<RequestProcessor> requestProcessors = new LinkedList<>();
 
-    public void redirectRequest(Request request) {
+    public void redirectRequest(Request request, Socket socket, DataInputStream dataInputStream) {
         for (RequestProcessor processor: requestProcessors){
             if (processor.canBeProcessed(request)) {
-                processor.processRequest(request);
+                processor.processRequest(request, socket, dataInputStream);
                 break;
             }
         }

@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 
 @RequiredArgsConstructor
 public class Server {
@@ -15,11 +16,8 @@ public class Server {
         try (ServerSocket serverSocket = new ServerSocket(8082)) {
 
             while (true) {
-
-                try (Socket socket = serverSocket.accept()) {
-                   requestReceiver.receiveRequest(socket);
-                }
-
+                Socket socket = serverSocket.accept();
+                new Thread(new ClientHandler(socket, requestReceiver)).start();
             }
 
         }

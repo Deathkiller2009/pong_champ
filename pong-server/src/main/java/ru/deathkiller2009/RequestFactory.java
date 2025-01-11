@@ -1,4 +1,4 @@
-package ru.deathkiller2009.request;
+package ru.deathkiller2009;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
