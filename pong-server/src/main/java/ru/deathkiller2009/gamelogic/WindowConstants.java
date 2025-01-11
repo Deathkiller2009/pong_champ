@@ -1,4 +1,4 @@
-package ru.deathkiller2009;
+package ru.deathkiller2009.gamelogic;
 
 public class WindowConstants {
 
@@ -10,7 +10,4 @@ public class WindowConstants {
 
     public static final int TOOLBAR_HEIGHT =  31;
 
-    public static final int SCORE_Y_POSITION = 70;
-
-    public static final int SCORE_X_POSITION = 20;
 }
